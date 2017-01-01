@@ -20,6 +20,20 @@
   overflow: hidden;
 }
 
+#save_my_car {
+  float: right;
+    
+}
+  /*float: left;
+  width: 100px; 
+    height: 100px; 
+    margin: 15 auto;*/
+
+
+#showroom {
+  display: none;
+}
+
 .demo-container {
   height: 100vh;
   min-height: 400px;
@@ -29,6 +43,16 @@
   background-color: white;
 }
 
+/*body {
+    background-color: green;
+}*/
+
+/*@media only screen and (min-width: 900px) {
+    body {
+        background-color: blue
+    }
+}
+*/
 
 .color-option {
   cursor: pointer;

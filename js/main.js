@@ -1,4 +1,18 @@
 // AN: we will create global variables that hold the state of our car selection
+
+// <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
+  // Initialize Firebase
+			var config = {
+			    apiKey: "AIzaSyA_qt-rn2gQiz-97PEOpYvcaqwnu34j6Lo",
+			    authDomain: "buycar-88cbd.firebaseapp.com",
+			    databaseURL: "https://buycar-88cbd.firebaseio.com",
+			    storageBucket: "buycar-88cbd.appspot.com",
+			    messagingSenderId: "185230057366"
+			};
+firebase.initializeApp(config);
+
+
 var myVehicleSelection = {
 	choice: '',
 	price: 0
@@ -86,6 +100,34 @@ var carSelection = {
 	package: {choice: 'Not Selected', price: 0},
 	
 }
+
+$('#showme').on('click', function() {
+	$('#home').hide();
+	$('#showroom').show();
+});
+
+$('#save_my_car').on('click', function() {
+	
+	$('.summary-option-ul').find('li').map(function() {
+		console.log("our function", this);
+
+		// var data = getMyDataFromDOM();
+		// console.log(JSON.stringify(data));
+	});
+
+
+    //console.log(JSON.stringify(userInput));
+ //    $('.container-fluid').children('.app-container').children('.options-container')
+	// .children('#options-display').children('.summary-options').val('');
+	// console.log(myVehicleSelection);
+ 	// console.log(myColorSelection);
+ 	// console.log(myPackageSelection);
+ 	var buycarReference = database.ref('car_settings');
+ 		buycarReference.push({
+ 		a_test: userInput
+ 	});
+    
+});
 
 $('li').on('click', function() {
   var name = $(this).data('tab');
@@ -241,6 +283,7 @@ var infowindow;
           infowindow.open(map, this);
         });
       }
+var database = firebase.database();
 
 
 

@@ -1,0 +1,13 @@
+{
+	'car': {
+		'features': {
+			'vehicle model': "Cadenza"
+			'color': "black",
+			'price': 160000,
+			'package': 'something',
+			'summary': 'something',
+			'total': 'total value of package selected'
+		}
+	}
+
+}
