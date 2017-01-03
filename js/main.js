@@ -117,13 +117,26 @@ $('#save_my_car').on('click', function() {
  			})
  		})
 });
-   
+
 		//console.log("our function", this);
 		// var data = getMyDataFromDOM();
 		// console.log(JSON.stringify(data));
 		// console.log(myVehicleSelection);
  		// console.log(myColorSelection);
  		// console.log(myPackageSelection);
+
+function getData() {
+	database.ref('car_settings').on('value', function (results) {
+		var allData = results.val();
+		var car_settings = [];
+		for (var i in allData) {
+			var context = {
+				a_test: allData[i].a_test
+			}
+		}
+
+	});
+}
 
 $('li').on('click', function() {
   var name = $(this).data('tab');
