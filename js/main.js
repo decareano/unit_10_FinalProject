@@ -108,26 +108,22 @@ $('#showme').on('click', function() {
 
 $('#save_my_car').on('click', function() {
 	
-	$('.summary-option-ul').find('li').map(function() {
-		console.log("our function", this);
-
+		$('.summary-option-ul').find('li').map(function() {
+			var getMyData = $(this).text();
+        	console.log(JSON.stringify(getMyData));
+    		var buycarReference = database.ref('car_settings');
+ 			buycarReference.push({
+ 			a_test: getMyData
+ 			})
+ 		})
+});
+   
+		//console.log("our function", this);
 		// var data = getMyDataFromDOM();
 		// console.log(JSON.stringify(data));
-	});
-
-
-    //console.log(JSON.stringify(userInput));
- //    $('.container-fluid').children('.app-container').children('.options-container')
-	// .children('#options-display').children('.summary-options').val('');
-	// console.log(myVehicleSelection);
- 	// console.log(myColorSelection);
- 	// console.log(myPackageSelection);
- 	var buycarReference = database.ref('car_settings');
- 		buycarReference.push({
- 		a_test: userInput
- 	});
-    
-});
+		// console.log(myVehicleSelection);
+ 		// console.log(myColorSelection);
+ 		// console.log(myPackageSelection);
 
 $('li').on('click', function() {
   var name = $(this).data('tab');
